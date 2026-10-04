@@ -35,7 +35,7 @@
       const btn = document.getElementById('btn');
 
       if (!title || !htmlContent.trim()) {
-        alert('One or more of the required fields were empty :/');
+        alert('One or more of the required fields were empty!');
         return;
       }
 
@@ -50,7 +50,9 @@
         });
 
         if (res.ok) {
-          alert('Submission sent!');
+          const slug = title.slice(0, 150).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+          const pageUrl = `https://aomeix.github.io/owotarchive/${slug}`;
+          alert(`Submission sent! Your page will be at ${pageUrl} if it gets accepted`);
           document.getElementById('title').value = '';
           editor.content.innerHTML = '';
           htmlContent = '';
