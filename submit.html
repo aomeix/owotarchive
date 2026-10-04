@@ -51,7 +51,7 @@
 
         if (res.ok) {
           const slug = title.slice(0, 150).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
-          const pageUrl = `https://aomeix.github.io/owotarchive/${slug}`;
+          const pageUrl = `https://aomeix.github.io/owotarchive/page/${slug}`;
           alert(`Submission sent! Your page will be at ${pageUrl} if it gets accepted`);
           document.getElementById('title').value = '';
           editor.content.innerHTML = '';
